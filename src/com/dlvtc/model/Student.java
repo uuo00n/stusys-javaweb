@@ -5,8 +5,8 @@ public class Student {
     private String name;
     private String sex;
     private int age;
-    private String weight;
-    private String height;
+    private float weight;
+    private float height;
 
     public int getId() {
         return id;
@@ -40,19 +40,19 @@ public class Student {
         this.age = age;
     }
 
-    public String getWeight() {
+    public float getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
-    public String getHeight() {
+    public float getHeight() {
         return height;
     }
 
-    public void setHeight(String height) {
+    public void setHeight(float height) {
         this.height = height;
     }
 }
