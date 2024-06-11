@@ -49,6 +49,12 @@
             margin-bottom: 10px;
             color: #333333; /* 更改标题字体颜色 */
         }
+
+        .record-info {
+            text-align: center;
+            margin-top: 20px;
+            color: #666666;
+        }
     </style>
 </head>
 <body>
@@ -75,5 +81,6 @@
         </tr>
     </c:forEach>
 </table>
+<div class="record-info">共 ${requestScope.list.size()} 条记录</div>
 </body>
 </html>
