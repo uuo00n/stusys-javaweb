@@ -42,11 +42,18 @@
             color: #7AB2B2; /* 设置链接颜色 */
         }
 
+        caption {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333333; /* 更改标题字体颜色 */
+        }
     </style>
 </head>
 <body>
 <center>
     <table>
+        <caption>编辑学生信息</caption>
         <tr>
             <th>记录条数</th>
             <th>学号</th>
