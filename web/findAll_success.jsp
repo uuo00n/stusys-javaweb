@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
         }
+
         table {
             border-collapse: collapse;
             width: 80%;
@@ -21,21 +22,27 @@
             border-radius: 5px; /* 添加圆角 */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
         }
+
         th, td {
             padding: 12px; /* 增加填充 */
             border: 1px solid #ccc;
+            text-align: center;
         }
+
         th {
             background-color: #CDE8E5; /* 更改表头背景色 */
             color: #333;
             font-size: 16px; /* 增加字体大小 */
         }
+
         tr:nth-child(even) {
             background-color: #f8f8f8; /* 更改偶数行背景色 */
         }
+
         tr:hover {
             background-color: #eaeaea; /* 增加悬停效果 */
         }
+
         caption {
             font-weight: bold;
             font-size: 1.2em;
