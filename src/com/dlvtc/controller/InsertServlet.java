@@ -1,6 +1,6 @@
 package com.dlvtc.controller;
 
-import com.dlvtc.dao.StudenDAOImpl;
+import com.dlvtc.dao.StudentDAOImpl;
 import com.dlvtc.dao.StudentDAO;
 import com.dlvtc.model.Student;
 
@@ -28,7 +28,7 @@ public class InsertServlet extends HttpServlet {
         stu.setWeight(Float.parseFloat(req.getParameter("weight")));
         stu.setHeight(Float.parseFloat(req.getParameter("height")));
 
-        StudentDAO sd = new StudenDAOImpl();
+        StudentDAO sd = new StudentDAOImpl();
         try {
             if (sd.insert(stu) > 0) {
                 req.getRequestDispatcher("/insert_success.jsp").forward(req, resp);

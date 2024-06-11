@@ -1,6 +1,6 @@
 package com.dlvtc.controller;
 
-import com.dlvtc.dao.StudenDAOImpl;
+import com.dlvtc.dao.StudentDAOImpl;
 import com.dlvtc.dao.StudentDAO;
 import com.dlvtc.model.Student;
 
@@ -16,7 +16,7 @@ public class UpdateStudentServlet extends HttpServlet {
         Student stu = new Student();
         stu.setId(Id);
 
-        StudentDAO sd = new StudenDAOImpl();
+        StudentDAO sd = new StudentDAOImpl();
         try {
             Student student = sd.findById(stu);
             if (student != null) {

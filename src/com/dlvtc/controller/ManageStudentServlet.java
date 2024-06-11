@@ -1,6 +1,6 @@
 package com.dlvtc.controller;
 
-import com.dlvtc.dao.StudenDAOImpl;
+import com.dlvtc.dao.StudentDAOImpl;
 import com.dlvtc.dao.StudentDAO;
 import com.dlvtc.model.Student;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public class ManageStudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StudentDAO ad = new StudenDAOImpl();
+        StudentDAO ad = new StudentDAOImpl();
         try {
             List<Student> list = ad.findAll();
             req.setAttribute("list", list);

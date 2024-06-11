@@ -1,6 +1,6 @@
 package com.dlvtc.controller;
 
-import com.dlvtc.dao.StudenDAOImpl;
+import com.dlvtc.dao.StudentDAOImpl;
 import com.dlvtc.dao.StudentDAO;
 import com.dlvtc.model.Student;
 
@@ -27,7 +27,7 @@ public class SelectByIdServlet extends HttpServlet {
         stu.setAge(age);
         stu.setWeight(weight);
 
-        StudentDAO sd = new StudenDAOImpl();
+        StudentDAO sd = new StudentDAOImpl();
         try {
             int count = sd.update(stu);
             if (count == 0) {
