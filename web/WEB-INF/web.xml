@@ -57,4 +57,12 @@
         <url-pattern>/updateStudent</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>updateStudentDone</servlet-name>
+        <servlet-class>com.dlvtc.controller.UpdateStudentDoneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateStudentDone</servlet-name>
+        <url-pattern>/updateStudentDone</url-pattern>
+    </servlet-mapping>
 </web-app>

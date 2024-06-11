@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class UpdateStudentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int Id = Integer.parseInt(req.getParameter("id"));
+        int Id = Integer.parseInt(req.getParameter("Id"));
         Student stu = new Student();
         stu.setId(Id);
 

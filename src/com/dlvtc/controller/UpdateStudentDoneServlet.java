@@ -19,7 +19,7 @@ public class UpdateStudentDoneServlet extends HttpServlet {
         String sex = req.getParameter("sex");
         int age = Integer.parseInt(req.getParameter("age"));
         float weight = Float.parseFloat(req.getParameter("weight"));
-        float height = Float.parseFloat(req.getParameter("height"));
+        float hight = Float.parseFloat(req.getParameter("hight"));
 
         Student stu = new Student();
         stu.setId(Id);
@@ -27,7 +27,7 @@ public class UpdateStudentDoneServlet extends HttpServlet {
         stu.setSex(sex);
         stu.setAge(age);
         stu.setWeight(weight);
-        stu.setHeight(height);
+        stu.setHeight(hight);
 
         StudentDAO sd = new StudentDAOImpl();
         try {
