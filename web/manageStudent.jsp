@@ -27,8 +27,8 @@
                 <td>${item.getAge()}</td>
                 <td>${item.getWeight()}</td>
                 <td>${item.getHeight()}</td>
-                <td><a href="../deleteStudent?ID=${item.getId()}">删除</a></td>
-                <td><a href="../updateStudent?ID=${item.getId()}">編辑</a></td>
+                <td><a href="../deleteStudent?Id=${item.getId()}">删除</a></td>
+                <td><a href="../updateStudent?Id=${item.getId()}">編辑</a></td>
             </tr>
         </c:forEach>
     </table>

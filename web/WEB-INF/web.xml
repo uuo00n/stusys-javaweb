@@ -39,4 +39,22 @@
         <url-pattern>/insert</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>deleteStudent</servlet-name>
+        <servlet-class>com.dlvtc.controller.DeleteStudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteStudent</servlet-name>
+        <url-pattern>/deleteStudent</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updateStudent</servlet-name>
+        <servlet-class>com.dlvtc.controller.UpdateStudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateStudent</servlet-name>
+        <url-pattern>/updateStudent</url-pattern>
+    </servlet-mapping>
+
 </web-app>
