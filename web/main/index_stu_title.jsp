@@ -8,9 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>页面标题</title>
 </head>
 <body>
+    <center>
+        <h1>学生体质信息管理系统</h1>
+    </center>
 
 </body>
 </html>
