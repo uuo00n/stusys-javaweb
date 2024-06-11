@@ -14,30 +14,21 @@ public class SelectByIdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
+        StudentDAO sd = new StudentDAOImpl();
         int Id = Integer.parseInt(req.getParameter("id"));
-        String name = req.getParameter("name");
-        String sex = req.getParameter("sex");
-        int age = Integer.parseInt(req.getParameter("age"));
-        float weight = Float.parseFloat(req.getParameter("weight"));
-        float height = Float.parseFloat(req.getParameter("height"));
         Student stu = new Student();
         stu.setId(Id);
-        stu.setName(name);
-        stu.setSex(sex);
-        stu.setAge(age);
-        stu.setWeight(weight);
-
-        StudentDAO sd = new StudentDAOImpl();
         try {
-            int count = sd.update(stu);
-            if (count == 0) {
-                req.getRequestDispatcher("/updateStudent_success.jsp").forward(req, resp);
+            Student student = sd.findById(stu);
+            if (student != null) {
+                req.setAttribute("student", student);
+                req.getRequestDispatcher("/findeById_success.jsp").forward(req, resp);
             } else {
-                req.getRequestDispatcher("/updateStudent_fail.jsp").forward(req, resp);
+                req.getRequestDispatcher("/findeById_fail.jsp").forward(req, resp);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            req.getRequestDispatcher("/updateStudent_fail.jsp").forward(req, resp);
+            req.getRequestDispatcher("/findeById_fail.jsp").forward(req, resp);
         }
     }
 

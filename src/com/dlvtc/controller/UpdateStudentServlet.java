@@ -23,7 +23,7 @@ public class UpdateStudentServlet extends HttpServlet {
                 req.setAttribute("student", student);
                 req.getRequestDispatcher("/updateStudent.jsp").forward(req, resp);
             } else {
-                req.getRequestDispatcher("/findeById_fail.jsp").forward(req, resp);
+                req.getRequestDispatcher("/findById_fail.jsp").forward(req, resp);
             }
         } catch (Exception e) {
             e.printStackTrace();

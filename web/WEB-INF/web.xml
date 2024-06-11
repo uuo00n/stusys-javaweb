@@ -4,21 +4,30 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>FindAllStudentsServlet</servlet-name>
+        <servlet-name>findAll</servlet-name>
         <servlet-class>com.dlvtc.controller.SelectAllServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FindAllStudentsServlet</servlet-name>
+        <servlet-name>findAll</servlet-name>
         <url-pattern>/main/findAll</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>ManageStudentServlet</servlet-name>
+        <servlet-name>manageStudent</servlet-name>
         <servlet-class>com.dlvtc.controller.ManageStudentServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ManageStudentServlet</servlet-name>
+        <servlet-name>manageStudent</servlet-name>
         <url-pattern>/main/manageStudent</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>findById</servlet-name>
+        <servlet-class>com.dlvtc.controller.SelectByIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>findById</servlet-name>
+        <url-pattern>/findById</url-pattern>
     </servlet-mapping>
 
 </web-app>
