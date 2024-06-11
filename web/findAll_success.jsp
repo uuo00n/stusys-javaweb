@@ -21,10 +21,10 @@
                 <td>${status.index + 1}</td>
                 <td>${item.getId()}</td>
                 <td>${item.getName()}</td>
-                <td>${item.getsex()}</td>
+                <td>${item.getSex()}</td>
                 <td>${item.getAge()}</td>
                 <td>${item.getWeight()}</td>
-                <td>${item.getHight()}</td>
+                <td>${item.getHeight()}</td>
             </tr>
         </c:forEach>
     </table>

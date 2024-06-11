@@ -66,12 +66,12 @@ public class StudentDAOImpl implements StudentDAO {
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     Student stu2 = new Student();
-                    stu2.setId(rs.getInt(1));
-                    stu2.setName(rs.getString(2));
-                    stu2.setSex(rs.getString(3));
-                    stu2.setAge(rs.getInt(4));
-                    stu2.setWeight(rs.getFloat(5));
-                    stu2.setHeight(rs.getFloat(6));
+                    stu2.setId(rs.getInt("id"));
+                    stu2.setName(rs.getString("name"));
+                    stu2.setSex(rs.getString("sex"));
+                    stu2.setAge(rs.getInt("age"));
+                    stu2.setWeight(rs.getFloat("weight"));
+                    stu2.setHeight(rs.getFloat("height"));
                     return stu2;
                 }
             }
