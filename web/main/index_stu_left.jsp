@@ -15,6 +15,11 @@
         p {
             line-height: 25px; /* 调整这个值来控制文本和图标的对齐 */
         }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -23,5 +28,10 @@
 </p>
 <p><a href="../insert.jsp" target="right"><img src="../image/icon-add.png" width="20" height="20"> 新添加学生</a></p>
 <p><a href="manageStudent" target="right"><img src="../image/icon-edit.png" width="15" height="15"> 管理学生信息</a></p>
+
+<footer>
+    © 2024 <a href="https://github.com/uuo00n">uuo00n</a> & <a href="https://github.com/pig40">pig40</a>. <br>
+    All rights reserved.
+</footer>
 </body>
 </html>
