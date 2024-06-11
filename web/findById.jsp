@@ -9,10 +9,6 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-
-        #container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,10 +16,18 @@
         }
 
         form {
-            background-color: #fff;
+            backdrop-filter: blur(13px);
+            background-color: rgba(244, 249, 249, 0);
+            border-radius: 100px;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
+            text-align: center;
+            transition: transform 0.3s ease; /* 添加过渡效果 */
+        }
+
+        form:hover {
+            transform: translateY(-5px); /* 鼠标悬停时向上移动5像素 */
         }
 
         input[type="text"], input[type="submit"], input[type="reset"] {
@@ -31,21 +35,22 @@
             margin: 5px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
+            transition: all 0.3s ease; /* 添加过渡效果 */
         }
 
         input[type="submit"], input[type="reset"] {
-            background-color: #336699;
-            color: #fff;
+            background-color: #4D869C; /* 设置按钮背景色 */
+            color: #fff; /* 设置按钮文字颜色 */
             cursor: pointer;
         }
 
         input[type="submit"]:hover, input[type="reset"]:hover {
-            background-color: #003366;
+            background-color: #7AB2B2; /* 设置鼠标悬停时背景色 */
         }
     </style>
 </head>
 <body>
-<div id="container">
+<div>
     <form action="findById" method="post">
         <p>请输入要查询的学生ID:</p>
         <input type="text" name="id"><br><br>

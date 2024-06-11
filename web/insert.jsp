@@ -9,16 +9,25 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
         }
 
         form {
-            margin: 50px auto;
+            backdrop-filter: blur(13px);
+            background-color: rgba(244, 249, 249, 0);
+            border-radius: 20px;
             padding: 20px;
-            width: 300px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
+            transition: transform 0.3s ease; /* 添加过渡效果 */
+        }
+
+        form:hover {
+            transform: translateY(-5px); /* 鼠标悬停时表单向上移动5像素 */
         }
 
         table {
@@ -27,25 +36,36 @@
 
         td {
             padding: 10px;
+            text-align: right;
         }
 
         input[type="text"], input[type="submit"], input[type="reset"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 100%;
             box-sizing: border-box;
+            transition: border-color 0.3s ease; /* 添加过渡效果 */
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff; /* 输入框获取焦点时边框颜色变为蓝色 */
         }
 
         input[type="submit"], input[type="reset"] {
-            background-color: #336699;
-            color: #fff;
+            width: auto;
+            margin-top: 20px;
+            margin-right: 5px;
+            background-color: #4D869C; /* 设置按钮背景色 */
+            color: #fff; /* 设置按钮文字颜色 */
             cursor: pointer;
+            transition: background-color 0.3s ease; /* 添加过渡效果 */
         }
 
         input[type="submit"]:hover, input[type="reset"]:hover {
-            background-color: #003366;
+            background-color: #7AB2B2; /* 设置鼠标悬停时背景色 */
         }
     </style>
 </head>
