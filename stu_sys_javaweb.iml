@@ -22,15 +22,6 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/mysql-connector-j-8.0.33.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.35-bin.jar!/" />
         </CLASSES>
         <JAVADOC />
