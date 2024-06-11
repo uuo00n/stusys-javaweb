@@ -23,10 +23,10 @@
                 <td>${status.index + 1}</td>
                 <td>${item.getId()}</td>
                 <td>${item.getName()}</td>
-                <td>${item.getsex()}</td>
+                <td>${item.getSex()}</td>
                 <td>${item.getAge()}</td>
-                <td>${item.getweight()}</td>
-                <td>${item.getHight()}</td>
+                <td>${item.getWeight()}</td>
+                <td>${item.getHeight()}</td>
                 <td><a href="../deleteStudent?ID=${item.getId()}">删除</a></td>
                 <td><a href="../updateStudent?ID=${item.getId()}">編辑</a></td>
             </tr>

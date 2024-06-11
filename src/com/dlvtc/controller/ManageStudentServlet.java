@@ -27,6 +27,6 @@ public class ManageStudentServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        super.doPost(req, resp);
     }
 }
