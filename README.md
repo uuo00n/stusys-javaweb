@@ -7,7 +7,7 @@
 ## 环境要求
 
 - JDK 8 或更高版本
-- Apache Tomcat 9 或更高版本
+- Apache Tomcat 8 或更高版本
 - Maven（可选）
 
 ## 部署说明
@@ -15,7 +15,7 @@
 1. 克隆或下载此项目到本地。
    
     ```bash
-    [git clone https://github.com/yourusername/student-info-management.git](https://github.com/uuo00n/stusys-javaweb.git)
+    git clone https://github.com/yourusername/student-info-management.git
     ```
 
 2. 使用 IDE（如 Eclipse 或 IntelliJ IDEA）打开项目。
