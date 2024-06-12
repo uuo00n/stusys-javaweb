@@ -30,6 +30,27 @@ public class StudentDAOImpl implements StudentDAO {
             return pstmt.executeUpdate();
         }
     }
+    @Override
+    public boolean existsId(int id) throws SQLException {
+        try (Connection con = DbConnect.getConnection();
+             PreparedStatement pstmt = con.prepareStatement("SELECT id FROM students WHERE id = ?")) {
+            pstmt.setInt(1, id);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                return rs.next(); // 如果查询结果存在记录，则表示ID已存在，返回 true；否则返回 false。
+            }
+        }
+    }
+
+    @Override
+    public boolean existsName(String name) throws SQLException {
+        try (Connection con = DbConnect.getConnection();
+             PreparedStatement pstmt = con.prepareStatement("SELECT id FROM students WHERE name = ?")) {
+            pstmt.setString(1, name);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                return rs.next(); // 如果查询结果存在记录，则表示姓名已存在，返回 true；否则返回 false。
+            }
+        }
+    }
 
     @Override
     public int remove(Student stu) throws SQLException {

@@ -34,7 +34,12 @@
 <body>
 <div class="container">
     <h1>插入学生信息失败</h1>
+    <% String errorMessage = (String) request.getAttribute("errorMessage"); %>
+    <% if (errorMessage != null && !errorMessage.isEmpty()) { %>
+    <p><%= errorMessage %></p>
+    <% } else { %>
     <p>学生信息插入失败，请重新再试！</p>
+    <% } %>
 </div>
 </body>
 </html>

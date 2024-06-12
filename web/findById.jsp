@@ -49,16 +49,69 @@
         input[type="submit"]:hover, input[type="reset"]:hover {
             background-color: #7AB2B2; /* 设置鼠标悬停时背景色 */
         }
+
+        .error {
+            color: red;
+        }
+
+        .alert {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 0, 0, 0.5);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+            z-index: 999;
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from { top: -100px; opacity: 0; }
+            to { top: 0; opacity: 1; }
+        }
     </style>
 </head>
 <body>
 <div>
-    <form action="findById" method="post">
+    <form action="findById" method="post" onsubmit="return validateForm()">
         <p>请输入要查询的学生ID:</p>
-        <input type="text" name="id" pattern="[0-9]*" title="学生ID只能包含数字"><br><br>
+        <input type="text" name="id" id="id" title="学生ID只能包含数字"><br>
         <input type="submit" value="提 交">
         <input type="reset" value="取 消">
     </form>
 </div>
+
+<div class="alert" id="alert"></div>
+
+<script>
+    function validateForm() {
+        var id = document.getElementById("id").value.trim();
+
+        if (id === "") {
+            showAlert("学生ID不能为空");
+            return false;
+        } else if (!/^\d+$/.test(id)) {
+            showAlert("学生ID只能为数字");
+            return false;
+        } else {
+            hideAlert();
+            return true;
+        }
+    }
+
+    function showAlert(message) {
+        var alertBox = document.getElementById("alert");
+        alertBox.textContent = message;
+        alertBox.style.display = "block";
+    }
+
+    function hideAlert() {
+        var alertBox = document.getElementById("alert");
+        alertBox.style.display = "none";
+    }
+</script>
 </body>
 </html>

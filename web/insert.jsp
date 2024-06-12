@@ -9,26 +9,43 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        }
+
+        .alert {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            padding: 15px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 5px;
+            box-sizing: border-box;
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.5s ease forwards, fadeOut 0.5s 3.5s forwards;
+        }
+
+        @keyframes slideIn {
+            from { top: -100px; opacity: 0; }
+            to { top: 0; opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
         }
 
         form {
-            backdrop-filter: blur(13px);
-            background-color: rgba(244, 249, 249, 0.8); /* 设置背景颜色透明度 */
-            border-radius: 5px;
+            margin-top: 50px;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
-            transition: transform 0.3s ease; /* 添加过渡效果 */
-            height: 580px;
+            background-color: rgba(244, 249, 249, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 500px;
-            box-sizing: border-box;
-        }
-
-        form:hover {
-            transform: translateY(-5px); /* 鼠标悬停时表单向上移动5像素 */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         h2 {
@@ -53,69 +70,176 @@
             margin-bottom: 5px;
             width: 100%;
             box-sizing: border-box;
-            transition: border-color 0.3s ease; /* 添加过渡效果 */
+            transition: border-color 0.3s ease;
         }
 
         input[type="text"]:focus {
-            border-color: #007bff; /* 输入框获取焦点时边框颜色变为蓝色 */
+            border-color: #007bff;
         }
 
         input[type="submit"], input[type="reset"] {
             width: auto;
             padding: 10px 20px;
             margin: 20px 5px 0 5px;
-            background-color: #4D869C; /* 设置按钮背景色 */
-            color: #fff; /* 设置按钮文字颜色 */
+            background-color: #4D869C;
+            color: #fff;
             cursor: pointer;
-            transition: background-color 0.3s ease; /* 添加过渡效果 */
-            border: none; /* 移除按钮边框 */
+            transition: background-color 0.3s ease;
+            border: none;
             border-radius: 5px;
         }
 
         input[type="submit"]:hover, input[type="reset"]:hover {
-            background-color: #7AB2B2; /* 设置鼠标悬停时背景色 */
+            background-color: #7AB2B2;
         }
 
         .button-group {
-            text-align: center; /* 按钮组居中对齐 */
+            text-align: center;
         }
     </style>
 </head>
 <body>
-<form action="insert" method="post">
-    <h2>添加新学生信息</h2> <!-- 添加标题 -->
+<div class="alert" id="alert"></div>
+<form action="insert" method="post" onsubmit="return validateForm() && handleSubmitResponse()">
+    <h2>添加新学生信息</h2>
     <table>
         <tr>
             <td>学号</td>
-            <td><input type="text" name="id"></td>
+            <td><input type="text" name="id" id="id" oninput="validateId()"></td>
         </tr>
         <tr>
             <td>姓名</td>
-            <td><input type="text" name="name"></td>
+            <td><input type="text" name="name" id="name" oninput="validateName()"></td>
         </tr>
         <tr>
             <td>性别</td>
-            <td><input type="text" name="sex"></td>
+            <td><input type="text" name="sex" id="sex" oninput="validateSex()"></td>
         </tr>
         <tr>
             <td>年龄</td>
-            <td><input type="text" name="age"></td>
+            <td><input type="text" name="age" id="age" oninput="validateAge()"></td>
         </tr>
         <tr>
             <td>体重</td>
-            <td><input type="text" name="weight"></td>
+            <td><input type="text" name="weight" id="weight" oninput="validateWeight()"></td>
         </tr>
         <tr>
             <td>身高</td>
-            <td><input type="text" name="height"></td>
+            <td><input type="text" name="height" id="height" oninput="validateHeight()"></td>
         </tr>
         <tr class="button-group">
             <td colspan="2">
-                <input type="submit" value="提交">
+                <input type="submit" value="提交" id="submitBtn">
                 <input type="reset" value="取消">
             </td>
         </tr>
     </table>
 </form>
+
+<script>
+    function validateForm() {
+        clearAlert(); // 清除之前的警告信息
+
+        var id = document.getElementById("id").value.trim();
+        var name = document.getElementById("name").value.trim();
+        var sex = document.getElementById("sex").value.trim();
+        var age = document.getElementById("age").value.trim();
+        var weight = document.getElementById("weight").value.trim();
+        var height = document.getElementById("height").value.trim();
+
+        if (id === "" || name === "" || sex === "" || age === "" || weight === "" || height === "") {
+            showAlert("学号、姓名、性别、年龄、体重和身高不能为空！", "error");
+            return false;
+        }
+
+        if (isNaN(id)) {
+            showAlert("学号必须为数字！", "error");
+            return false;
+        }
+
+        if (sex !== "男" && sex !== "女") {
+            showAlert("性别必须为'男'或'女'！", "error");
+            return false;
+        }
+
+        return true;
+    }
+
+    function showAlert(message, type) {
+        var alertBox = document.getElementById("alert");
+        alertBox.textContent = message;
+        alertBox.className = "alert " + type;
+        alertBox.style.display = "block";
+    }
+
+    function clearAlert() {
+        var alertBox = document.getElementById("alert");
+        alertBox.textContent = "";
+        alertBox.style.display = "none";
+    }
+
+    function validateId() {
+        var id = document.getElementById("id").value.trim();
+        if (isNaN(id)) {
+            showAlert("学号必须为数字！", "error");
+        } else {
+            clearAlert();
+        }
+    }
+
+    function validateName() {
+        var name = document.getElementById("name").value.trim();
+        if (name === "") {
+            showAlert("姓名不能为空！", "error");
+        } else {
+            clearAlert();
+        }
+    }
+
+    function validateSex() {
+        var sex = document.getElementById("sex").value.trim();
+        if (sex !== "男" && sex !== "女") {
+            showAlert("性别必须为'男'或'女'！", "error");
+        } else {
+            clearAlert();
+        }
+    }
+
+    function validateAge() {
+        var age = document.getElementById("age").value.trim();
+        if (age === "") {
+            showAlert("年龄不能为空！", "error");
+        } else {
+            clearAlert();
+        }
+    }
+
+    function validateWeight() {
+        var weight = document.getElementById("weight").value.trim();
+        if (weight === "") {
+            showAlert("体重不能为空！", "error");
+        } else {
+            clearAlert();
+        }
+    }
+
+    function validateHeight() {
+        var height = document.getElementById("height").value.trim();
+        if (height === "") {
+            showAlert("身高不能为空！", "error");
+        } else {
+            clearAlert();
+        }
+    }
+
+    // 修改onsubmit函数，接收后端返回的数据
+    function handleSubmitResponse(response) {
+        if (response === -1) {
+            showAlert("已存在相同学号的记录！", "error");
+            return false; // 阻止表单提交
+        }
+        return true; // 允许表单提交
+    }
+</script>
 </body>
 </html>

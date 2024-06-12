@@ -50,15 +50,42 @@
             background-color: #007bff; /* 设置鼠标悬停时背景色 */
             color: #fff; /* 设置鼠标悬停时文字颜色 */
         }
+
+        /* 弹窗样式 */
+        .alert {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #dc3545;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        /* 弹窗动画 */
+        @keyframes slideIn {
+            from {
+                top: -50px;
+                opacity: 0;
+            }
+            to {
+                top: 0;
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
 <center>
-    <form action="updateStudentDone" method="post">
+    <form action="updateStudentDone" method="post" onsubmit="return checkId()">
         <table>
             <tr>
                 <td>学号</td>
-                <td><input type="text" name="id" value="${student.getId()}"></td>
+                <td><input type="text" name="id" id="studentId" value="${student.getId()}" oninput="checkId()"></td>
             </tr>
             <tr>
                 <td>姓名</td>
@@ -88,6 +115,24 @@
             </tr>
         </table>
     </form>
+    <!-- 弹窗 -->
+    <div class="alert" id="alertMessage"></div>
 </center>
+<script>
+    function checkId() {
+        var studentId = document.getElementById("studentId").value;
+        // 检查学号是否改变
+        if (studentId != "${student.getId()}") {
+            var alertMessage = document.getElementById("alertMessage");
+            alertMessage.innerHTML = "学生ID不可修改！";
+            alertMessage.style.display = "block";
+            setTimeout(function() {
+                alertMessage.style.display = "none";
+            }, 3000); // 3秒后隐藏弹窗
+            return false;
+        }
+        return true;
+    }
+</script>
 </body>
 </html>
