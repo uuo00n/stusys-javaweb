@@ -10,7 +10,7 @@ public class DbConnect {
     private static String driverName = "com.mysql.jdbc.Driver"; // 修改驱动名称为MySQL 8的驱动名称
     private static String user = "root";
     private static String password = "123456";
-    private static String dbName = "javaweb";
+    private static String dbName = "stusysjavaweb";
 
     public static Connection getConnection() {
         String url1 = "jdbc:mysql://localhost:3306/" + dbName;
