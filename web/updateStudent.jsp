@@ -27,28 +27,25 @@
 
         td {
             padding: 10px;
-            text-align: right;
+            text-align: center;
         }
 
         input[type="text"], input[type="submit"], input[type="reset"] {
-            padding: 8px;
-            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
             border: 1px solid #ccc;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            width: 100%;
-            box-sizing: border-box;
+            border-radius: 4px;
+            transition: all 0.3s ease; /* 添加过渡效果 */
         }
 
         input[type="submit"], input[type="reset"] {
-            width: auto;
-            margin-top: 20px;
-            margin-right: 5px;
+            background-color: #4D869C; /* 设置按钮背景色 */
+            color: #fff; /* 设置按钮文字颜色 */
+            cursor: pointer;
         }
 
         input[type="submit"]:hover, input[type="reset"]:hover {
-            background-color: #007bff; /* 设置鼠标悬停时背景色 */
-            color: #fff; /* 设置鼠标悬停时文字颜色 */
+            background-color: #7AB2B2; /* 设置鼠标悬停时背景色 */
         }
 
         /* 弹窗样式 */
