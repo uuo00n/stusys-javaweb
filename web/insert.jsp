@@ -28,13 +28,23 @@
         }
 
         @keyframes slideIn {
-            from { top: -100px; opacity: 0; }
-            to { top: 0; opacity: 1; }
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+            to {
+                top: 0;
+                opacity: 1;
+            }
         }
 
         @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
         }
 
         form {
@@ -180,8 +190,12 @@
 
     function validateId() {
         var id = document.getElementById("id").value.trim();
-        if (isNaN(id)) {
-            showAlert("学号必须为数字！", "error");
+        var idPattern = /^\d{10}$/; // 匹配10位数字的正则表达式
+
+        if (id === "") {
+            showAlert("学号不能为空！", "error");
+        } else if (!idPattern.test(id)) {
+            showAlert("学号必须为10位数字且不能包含字母！", "error");
         } else {
             clearAlert();
         }
@@ -207,8 +221,14 @@
 
     function validateAge() {
         var age = document.getElementById("age").value.trim();
+        var ageValue = Number(age);
+
         if (age === "") {
             showAlert("年龄不能为空！", "error");
+        } else if (isNaN(ageValue)) {
+            showAlert("年龄必须为数字！", "error");
+        } else if (ageValue < 0 || ageValue > 255) {
+            showAlert("年龄必须在0到255之间！", "error");
         } else {
             clearAlert();
         }
@@ -218,6 +238,8 @@
         var weight = document.getElementById("weight").value.trim();
         if (weight === "") {
             showAlert("体重不能为空！", "error");
+        } else if (isNaN(weight) || weight > 999) {
+            showAlert("体重不能超过999且必须是数字！", "error");
         } else {
             clearAlert();
         }
@@ -227,6 +249,8 @@
         var height = document.getElementById("height").value.trim();
         if (height === "") {
             showAlert("身高不能为空！", "error");
+        } else if (isNaN(height) || height > 999) {
+            showAlert("身高不能超过999且必须是数字！", "error");
         } else {
             clearAlert();
         }
