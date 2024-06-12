@@ -55,7 +55,7 @@
 <div>
     <form action="findById" method="post">
         <p>请输入要查询的学生ID:</p>
-        <input type="text" name="id"><br><br>
+        <input type="text" name="id" pattern="[0-9]*" title="学生ID只能包含数字"><br><br>
         <input type="submit" value="提 交">
         <input type="reset" value="取 消">
     </form>

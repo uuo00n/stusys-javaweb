@@ -12,19 +12,31 @@ import java.io.IOException;
 
 public class UpdateStudentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int Id = Integer.parseInt(req.getParameter("Id"));
-        Student stu = new Student();
-        stu.setId(Id);
+        String idParam = req.getParameter("Id");
 
-        StudentDAO sd = new StudentDAOImpl();
+        // 检查 idParam 是否为空
+        if (idParam == null || idParam.isEmpty()) {
+            req.getRequestDispatcher("/invalid_id.jsp").forward(req, resp);
+            return;
+        }
+
         try {
+            int Id = Integer.parseInt(idParam);
+            Student stu = new Student();
+            stu.setId(Id);
+
+            StudentDAO sd = new StudentDAOImpl();
             Student student = sd.findById(stu);
+
             if (student != null) {
                 req.setAttribute("student", student);
                 req.getRequestDispatcher("/updateStudent.jsp").forward(req, resp);
             } else {
                 req.getRequestDispatcher("/findById_fail.jsp").forward(req, resp);
             }
+        } catch (NumberFormatException e) {
+            // 处理参数不是有效整数的情况
+            req.getRequestDispatcher("/invalid_id.jsp").forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
             req.getRequestDispatcher("/findAll_fail.jsp").forward(req, resp);

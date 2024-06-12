@@ -58,27 +58,27 @@
         <table>
             <tr>
                 <td>学号</td>
-                <td><input type="text" name="id" value="${requestScope.student.getId()}"></td>
+                <td><input type="text" name="id" value="${student.getId()}"></td>
             </tr>
             <tr>
                 <td>姓名</td>
-                <td><input type="text" name="name" value="${requestScope.student.getName()}"></td>
+                <td><input type="text" name="name" value="${student.getName()}"></td>
             </tr>
             <tr>
                 <td>性别</td>
-                <td><input type="text" name="sex" value="${requestScope.student.getSex()}"></td>
+                <td><input type="text" name="sex" value="${student.getSex()}"></td>
             </tr>
             <tr>
                 <td>年龄</td>
-                <td><input type="text" name="age" value="${requestScope.student.getAge()}"></td>
+                <td><input type="text" name="age" value="${student.getAge()}"></td>
             </tr>
             <tr>
                 <td>体重</td>
-                <td><input type="text" name="weight" value="${requestScope.student.getWeight()}"></td>
+                <td><input type="text" name="weight" value="${student.getWeight()}"></td>
             </tr>
             <tr>
                 <td>身高</td>
-                <td><input type="text" name="height" value="${requestScope.student.getHeight()}"></td>
+                <td><input type="text" name="height" value="${student.getHeight()}"></td>
             </tr>
             <tr align="center">
                 <td colspan="2">

@@ -33,8 +33,14 @@ public class UpdateStudentDoneServlet extends HttpServlet {
             // 解析参数并进行格式检查
             int id = Integer.parseInt(idParam);
             int age = Integer.parseInt(ageParam);
-            float weight = Float.parseFloat(weightParam);
-            float height = Float.parseFloat(heightParam);
+            float weight = 0.0f;
+            float height = 0.0f;
+
+            // 空值检查和解析
+            if (!weightParam.isEmpty())
+                weight = Float.parseFloat(weightParam);
+            if (!heightParam.isEmpty())
+                height = Float.parseFloat(heightParam);
 
             // 创建学生对象并设置属性
             Student stu = new Student();
