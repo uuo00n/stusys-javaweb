@@ -24,7 +24,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
             text-align: center;
             transition: transform 0.3s ease; /* 添加过渡效果 */
-            height: 180px;
+            height: 155px;
             width: 500px;
         }
 
