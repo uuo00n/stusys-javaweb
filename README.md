@@ -16,7 +16,7 @@
 
    github仓库地址：
     ```bash
-    git clone https://github.com/yourusername/student-info-management.git
+    git clone https://github.com/uuo00n/stusys-javaweb.git
     ```
    gitee仓库地址:
    ```bash
