@@ -13,10 +13,15 @@
 ## 部署说明
 
 1. 克隆或下载此项目到本地。
-   
+
+   github仓库地址：
     ```bash
     git clone https://github.com/yourusername/student-info-management.git
     ```
+   gitee仓库地址:
+   ```bash
+   git clone https://gitee.com/huang-junbo/stusys-javaweb.git
+   ```
 
 2. 使用 IDE（如 Eclipse 或 IntelliJ IDEA）打开项目。
 
