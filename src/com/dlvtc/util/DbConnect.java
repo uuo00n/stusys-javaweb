@@ -8,12 +8,12 @@ import java.sql.SQLException;
 
 public class DbConnect {
     private static String driverName = "com.mysql.jdbc.Driver"; // 修改驱动名称为MySQL 8的驱动名称
-    private static String user = "root";
-    private static String password = "123456";
-    private static String dbName = "stusysjavaweb";
+    private static String user = "javastu";
+    private static String password = "huang";
+    private static String dbName = "javastu";
 
     public static Connection getConnection() {
-        String url1 = "jdbc:mysql://localhost:3306/" + dbName;
+        String url1 = "jdbc:mysql://120.46.212.36:3306/" + dbName;
         String url2 = "?user=" + user + "&password=" + password;
         String url3 = "&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC";
         String url = url1 + url2 + url3;
