@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: huang
-  Date: 2024/7/3
-  Time: 上午8:42
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,32 +9,58 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f7f7f7;
+            background-color: #E5EFF6; /* 浅绿色背景色 */
+            margin: 0;
         }
         .container {
             background-color: white;
-            padding: 20px;
-            border-radius: 5px;
+            padding: 40px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            color: #555;
         }
         .form-group input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         .form-group img {
+            display: block;
+            margin-top: 10px;
             cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group input[type="submit"] {
+            width: 100%;
+            background-color: #5CB85C; /* 按钮背景色 */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #4CAE4C;
         }
         .error {
             color: red;
-            margin-bottom: 10px;
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
