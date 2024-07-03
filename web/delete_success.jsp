@@ -21,7 +21,7 @@
         }
 
         h1 {
-            color: #4D869C; /* 标题颜色 */
+            color: #3e2e75; /* 标题颜色 */
             text-align: center;
         }
 

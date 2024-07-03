@@ -23,7 +23,7 @@
             width: 120%; /* 调整表格宽度 */
             border-collapse: collapse;
             border: 2px solid #ccc;
-            background-color: #CDE8E5; /* 设置表格背景色 */
+            background-color: #abbcda; /* 设置表格背景色 */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
             border-radius: 8px; /* 添加边框圆角 */
             transition: all 0.3s ease; /* 添加过渡效果 */

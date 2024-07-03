@@ -91,7 +91,7 @@
             width: auto;
             padding: 10px 20px;
             margin: 20px 5px 0 5px;
-            background-color: #4D869C;
+            background-color: #3e2e75;
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -100,7 +100,7 @@
         }
 
         input[type="submit"]:hover, input[type="reset"]:hover {
-            background-color: #7AB2B2;
+            background-color: #2d2057;
         }
 
         .button-group {

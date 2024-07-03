@@ -30,7 +30,7 @@
         }
 
         th {
-            background-color: #CDE8E5; /* 更改表头背景色 */
+            background-color: #abbcda; /* 更改表头背景色 */
             color: #333;
             font-size: 16px; /* 增加字体大小 */
         }

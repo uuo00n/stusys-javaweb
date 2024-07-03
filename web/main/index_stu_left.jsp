@@ -30,7 +30,7 @@
 <p><a href="manageStudent" target="right"><img src="../image/icon-edit.png" width="15" height="15"> 管理学生信息</a></p>
 
 <footer>
-    © 2024 <a href="https://github.com/uuo00n">uuo00n</a> & <a href="https://github.com/pig40">pig40</a>. <br>
+    © 2024 <a href="https://github.com/uuo00n" target="_blank">uuo00n</a> & <a href="https://github.com/pig40" target="_blank">pig40</a>. <br>
     All rights reserved.
 </footer>
 </body>

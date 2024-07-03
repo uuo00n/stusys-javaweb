@@ -15,7 +15,7 @@
 
         #header {
             height: 80px; /* 将高度减小为 80px */
-            background-color: #CDE8E5; /* 使用线性渐变背景色 */
+            background-color: #abbcda; /* 使用线性渐变背景色 */
             color: #333333;
             display: flex;
             align-items: center;
@@ -36,7 +36,7 @@
             padding: 20px;
             position: relative;
             transition: width 0.3s; /* 添加过渡效果 */
-            background-color: #7AB2B2;
+            background-color: #abbcda;
         }
 
         #left:hover {

@@ -25,7 +25,7 @@
         }
 
         th {
-            background-color: #CDE8E5; /* 设置标题背景色 */
+            background-color: #abbcda; /* 设置标题背景色 */
             color: #333333; /* 设置标题文字颜色 */
         }
 
@@ -39,7 +39,7 @@
 
         a {
             text-decoration: none;
-            color: #7AB2B2; /* 设置链接颜色 */
+            color: #95a4bd; /* 设置链接颜色 */
         }
 
         caption {

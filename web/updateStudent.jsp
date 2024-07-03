@@ -39,13 +39,13 @@
         }
 
         input[type="submit"], input[type="reset"] {
-            background-color: #4D869C; /* 设置按钮背景色 */
+            background-color: #3e2e75; /* 设置按钮背景色 */
             color: #fff; /* 设置按钮文字颜色 */
             cursor: pointer;
         }
 
         input[type="submit"]:hover, input[type="reset"]:hover {
-            background-color: #7AB2B2; /* 设置鼠标悬停时背景色 */
+            background-color: #2d2057; /* 设置鼠标悬停时背景色 */
         }
 
         /* 弹窗样式 */
