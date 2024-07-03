@@ -15,7 +15,7 @@
 
         form {
             backdrop-filter: blur(13px);
-            background-color: rgba(244, 249, 249, 0);
+            background-color: #f0f1f3;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */

@@ -76,7 +76,7 @@
 </head>
 <body>
 <div>
-    <form action="findById" method="post" onsubmit="return validateForm()">
+    <form action="findById" method="post" onsubmit="return validateForm()" style="background-color: #f0f1f3">
         <p>请输入要查询的学生ID:</p>
         <input type="text" name="id" id="id" title="学生ID只能包含数字"><br>
         <input type="submit" value="提 交">

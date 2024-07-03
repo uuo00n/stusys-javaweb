@@ -17,7 +17,7 @@
 
         .container {
             backdrop-filter: blur(13px);
-            background-color: rgba(244, 249, 249, 0.8); /* 设置背景颜色透明度 */
+            background-color: #f0f1f3; /* 设置背景颜色透明度 */
             border-radius: 5px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */

@@ -39,13 +39,13 @@
         }
 
         tr:first-child {
-            background-color: #CDE8E5; /* 设置表头背景色 */
+            background-color: #95a4bd; /* 设置表头背景色 */
             color: #333; /* 设置表头文字颜色 */
             font-weight: bold; /* 设置表头文字加粗 */
         }
 
         tr:first-child td {
-            background-color: #CDE8E5; /* 设置表头单元格背景色 */
+            background-color: #abbcda; /* 设置表头单元格背景色 */
         }
 
         tr:hover {

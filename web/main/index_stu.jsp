@@ -47,7 +47,7 @@
             border: none;
             padding: 20px;
             position: relative;
-            background-color: #EEF7FF;
+            background-color: #ffffff;
             backdrop-filter: blur(10px); /* 添加模糊效果 */
         }
 
