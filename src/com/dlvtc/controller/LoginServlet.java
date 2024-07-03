@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
         try {
             if (authenticateUser(username, password)) {
                 // 登录成功，重定向到首页
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("/stu_sys_javaweb_war_exploded/main/index_stu.jsp");
             } else {
                 // 登录失败，返回错误信息
                 request.setAttribute("errorMessage", "无效的用户名或密码");
