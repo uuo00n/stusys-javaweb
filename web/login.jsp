@@ -29,11 +29,26 @@
         }
         .btn-custom:hover {
             background-color: #2d2057;
+            color: white;
         }
         .error {
             color: red;
             text-align: center;
             margin-top: 10px;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+            color: white;
+        }
+        footer a {
+            color: inherit; /* 继承父元素的颜色 */
+            text-decoration: none; /* 去掉下划线 */
+        }
+        footer a:hover {
+            color: #ddd; /* 鼠标悬停时的颜色 */
         }
     </style>
 </head>
@@ -64,7 +79,9 @@
         </div>
     </form>
 </div>
-
+<footer>
+    © 2024 <a href="https://github.com/uuo00n" target="_blank">uuo00n</a> & <a href="https://github.com/pig40" target="_blank">pig40</a>.&nbsp;All rights reserved.
+</footer>
 <!-- 引入Bootstrap JS和依赖 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
