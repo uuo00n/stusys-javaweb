@@ -11,7 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.mindrot.jbcrypt.BCrypt;  // 导入 jBCrypt 库
+import javax.servlet.http.HttpSession;
+import org.mindrot.jbcrypt.BCrypt;
 
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
@@ -31,10 +32,11 @@ public class LoginServlet extends HttpServlet {
 
         try {
             if (authenticateUser(username, password)) {
+                HttpSession session = request.getSession();
+                session.setAttribute("username", username);
                 // 登录成功，重定向到首页
                 response.sendRedirect("/stu_sys_javaweb_war_exploded/main/index_stu.jsp");
             } else {
-                // 登录失败，返回错误信息
                 request.setAttribute("errorMessage", "无效的用户名或密码");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
@@ -57,7 +59,6 @@ public class LoginServlet extends HttpServlet {
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     String storedPassword = rs.getString("password");
-                    // 使用 jBCrypt 提供的 checkpw 方法验证密码
                     return BCrypt.checkpw(password, storedPassword);
                 }
             }

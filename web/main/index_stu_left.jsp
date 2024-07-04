@@ -29,7 +29,7 @@
 <p><a href="manageStudent" target="right"><img src="../image/icon-edit.png" width="15" height="15"> 管理学生信息</a></p>
 
 <!-- 添加退出登录按钮 -->
-<p style="text-align: center"><a href="logout.jsp">退出登录</a></p>
+<p style="text-align: center"><a href="../logout.jsp">退出登录</a></p>
 
 <footer>
     © 2024 <a href="https://github.com/uuo00n" target="_blank">uuo00n</a> & <a href="https://github.com/pig40" target="_blank">pig40</a>. <br>
