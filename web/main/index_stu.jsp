@@ -1,4 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%
+    HttpSession currentSession = request.getSession(false);
+    if (currentSession == null || currentSession.getAttribute("username") == null) {
+        response.sendRedirect("../login.jsp");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +32,6 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
         }
 
-
-
         #container {
             display: flex;
             height: calc(100vh - 80px); /* 全屏高度减去头部高度 */
@@ -50,7 +56,6 @@
             background-color: #ffffff;
             backdrop-filter: blur(10px); /* 添加模糊效果 */
         }
-
 
         a {
             text-decoration: none;
@@ -78,7 +83,7 @@
     <nav id="left">
         <jsp:include page="index_stu_left.jsp"/>
     </nav>
-    <iframe id="right" name="right" src="index_stu_right.jsp"  scrolling="no"></iframe>
+    <iframe id="right" name="right" src="index_stu_right.jsp" scrolling="no"></iframe>
 </div>
 </body>
 </html>
