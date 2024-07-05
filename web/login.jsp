@@ -49,6 +49,7 @@
         }
         footer a:hover {
             color: #ddd; /* 鼠标悬停时的颜色 */
+            text-decoration: none; /* 去掉下划线 */
         }
     </style>
 </head>
