@@ -14,11 +14,11 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="javastu@120.46.212.36" uuid="f800a17a-4e62-424c-afd4-aa6192ecd83b">
+    <data-source source="LOCAL" name="stu-sys-javaweb@120.46.212.36" uuid="78c3865c-fdb8-4d4c-9933-9c2f2b96da3e">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://120.46.212.36:3306/javastu</jdbc-url>
+      <jdbc-url>jdbc:mysql://120.46.212.36:3306/stu-sys-javaweb</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />

@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
                 // 登录成功，重定向到首页
-                response.sendRedirect("/stu_sys_javaweb_war_exploded/main/index_stu.jsp");
+                response.sendRedirect("/main/index_stu.jsp");
             } else {
                 request.setAttribute("errorMessage", "无效的用户名或密码");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -48,9 +48,9 @@ public class LoginServlet extends HttpServlet {
     }
 
     private boolean authenticateUser(String username, String password) throws SQLException, ClassNotFoundException {
-        String jdbcUrl = "jdbc:mysql://localhost:3306/stusysjavaweb?useSSL=false&serverTimezone=UTC";
-        String dbUser = "root";
-        String dbPassword = "123456";
+        String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/stu-sys-javaweb?useSSL=false&serverTimezone=UTC";
+        String dbUser = "hjb";
+        String dbPassword = "hjb666";
 
         Class.forName("com.mysql.jdbc.Driver");  // 使用 com.mysql.cj.jdbc.Driver
         try (Connection conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPassword);
