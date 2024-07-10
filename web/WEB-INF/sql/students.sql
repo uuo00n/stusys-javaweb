@@ -1,22 +1,21 @@
-CREATE TABLE students
+create table students
 (
-    id         INT PRIMARY KEY AUTO_INCREMENT,
-    name       VARCHAR(50)   NOT NULL,
-    sex        ENUM('男', '女') NOT NULL,
-    age        TINYINT UNSIGNED NOT NULL,
-    weight     DECIMAL(5, 2) NOT NULL,
-    height     DECIMAL(5, 2) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    id     int auto_increment
+        primary key,
+    name   varchar(20) null,
+    sex    varchar(5)  null,
+    age    int         null,
+    weight float       null,
+    height float       null
 );
 
+create table users
+(
+    id       int auto_increment
+        primary key,
+    username varchar(50)  not null,
+    password varchar(255) not null,
+    constraint username
+        unique (username)
+);
 
-insert into students
-values (2014511511, '张三', '男', 20, 70, 180, DEFAULT);
-insert into students
-values (2014511512, '李四', '男', 20, 70, 180, DEFAULT);
-insert into students
-values (2014511513, '王五', '男', 20, 70, 180, DEFAULT);
-insert into students
-values (2014511514, '赵六', '女', 21, 50, 180, DEFAULT);
-insert into students
-values (2014511515, '孙七', '女', 22, 51, 180, DEFAULT);
